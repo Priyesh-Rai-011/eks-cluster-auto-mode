@@ -1,0 +1,12 @@
+apiVersion: eks.amazonaws.com/v1
+kind: NodeClass
+metadata:
+  name: default
+spec:
+  role: eks-auto-node-role-20260219085655259000000002
+  subnetSelectorTerms:
+    - id: subnet-0c3d8e81cd94a6f0f
+    - id: subnet-0f885de2c43d51937
+    - id: subnet-0df7eccd47048315b
+  securityGroupSelectorTerms:
+    - id: sg-0a14882b8398a2ac2

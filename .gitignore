@@ -1,0 +1,21 @@
+# Terragrunt cache
+.terragrunt-cache/
+
+# Terraform state
+*.tfstate
+*.tfstate.backup
+
+# Terraform lock and temp files
+.terraform/
+.terraform.lock.hcl
+.terragrunt-init-required
+
+# Credentials / secrets
+*.pem
+*.key
+override.tf
+override.tf.json
+
+# OS
+.DS_Store
+Thumbs.db
