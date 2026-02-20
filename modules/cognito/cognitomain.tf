@@ -197,3 +197,15 @@ resource "aws_cognito_resource_server" "resource_server" {
     }
   }
 }
+
+# -------------------------------------------------------
+# Managed Login Branding (v2 - newer hosted UI)
+# -------------------------------------------------------
+resource "aws_cognito_managed_login_branding" "branding" {
+  count        = length(aws_cognito_user_pool.cognito_user_pool) > 0 ? 1 : 0
+  user_pool_id = aws_cognito_user_pool.cognito_user_pool[count.index].id
+  client_id    = aws_cognito_user_pool_client.cognito_user_pool_client[count.index].id
+
+  # Use the new Managed Login experience (not classic Hosted UI)
+  use_cognito_provided_values = true
+}
